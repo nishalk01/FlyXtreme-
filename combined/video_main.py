@@ -19,9 +19,6 @@ def gen(camera):
         cv2.putText(i,str(class_name),(x, int(y+.05*frame_h)),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,0))
         ret, jpeg = cv2.imencode('.jpg', i)
         frame=jpeg.tobytes()
-        #cv2.imshow('frame',i)
-        #if cv2.waitKey(1) & 0xFF == ord('q'):
-         #break
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
@@ -33,6 +30,5 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    #flask run -h 192.168.1.100
     app.run(host='192.168.43.123',
 port=5001, debug=True)
