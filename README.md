@@ -1,5 +1,5 @@
 # FlyXtreme
-# Will be writing readme soon...
+
 <b> None of these code are my mine borrowed from other repo and tweaked a few </b>
 <b> The repository "combined" consists of 3 python script </b> 
 <ul>
