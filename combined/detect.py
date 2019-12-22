@@ -1,6 +1,5 @@
 import cv2
-import psutil
-# Pretrained classes in the model
+
 classNames = {0: 'background',
               1: 'person', 2: 'bicycle', 3: 'car', 4: 'motorcycle', 5: 'airplane', 6: 'bus',
               7: 'train', 8: 'truck', 9: 'boat', 10: 'traffic light', 11: 'fire hydrant',
@@ -26,10 +25,6 @@ def id_class_name(class_id, classes):
             return value
 
 
-# Loading model
-
-#image = cv2.imread("cyber_truck.jpeg")
-#image_height, image_width, _ = image.shape
 def detect_(image,model):
   model.setInput(cv2.dnn.blobFromImage(image, size=(300, 300), swapRB=True))
   output = model.forward()
@@ -42,8 +37,6 @@ def detect_(image,model):
     if confidence > .5:
         class_id = detection[1]
         class_name=id_class_name(class_id,classNames)
-        #print(class_name)
-        #print(str(str(class_id) + " " + str(detection[2])  + " " + class_name))
         x = detection[3] * image_width
         y = detection[4] * image_height
         w = detection[5] * image_width
