@@ -1,5 +1,5 @@
 # FlyXtreme
-<b> the website-insteraction is about the part that involves updating the site with video and also for the part where the python script has to pass data onto the website(which will be mainly helpful while using google maps api) </b>
+
 <b> None of these code are my mine borrowed from other repo and tweaked a few </b>
 <b> The repository "combined" consists of 3 python script </b> 
 <ul>
@@ -22,6 +22,6 @@
  <li>Run the command(make sure the terminal is open in the location your scripts are present)</li>
  
 <h2> python video_main.py </h2>
- 
+ <b> the website-insteraction is about the part that involves updating the site with video and also for the part where the python script has to pass data onto the website(which will be mainly helpful while using google maps api).This folder is ongoing .</b>
  
 <b> Reference:</b><link>https://jeanvitor.com/tensorflow-object-detecion-opencv/</link>
