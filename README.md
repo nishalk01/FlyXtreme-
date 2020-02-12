@@ -1,5 +1,5 @@
 # FlyXtreme
-
+<b> the website-insteraction is about the part that involves updating the site with video and also for the part where the python script has to pass data onto the website(which will be mainly helpful while using google maps api) </b>
 <b> None of these code are my mine borrowed from other repo and tweaked a few </b>
 <b> The repository "combined" consists of 3 python script </b> 
 <ul>
