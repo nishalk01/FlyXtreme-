@@ -1,6 +1,6 @@
 # FlyXtreme
 
-<b> None of these codes are mine, but are modified versions are the original versions of code borrowed from other repositories </b>
+<b> None of these codes are mine, but are modified versions or the original versions of code borrowed from other repositories </b>
 <b> The repository "combined" consists of 3 python script </b> 
 <ul>
 <li> camera.py </li>
