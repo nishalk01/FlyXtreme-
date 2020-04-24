@@ -1,6 +1,6 @@
 # FlyXtreme
 
-<b> None of these code are my mine borrowed from other repo and tweaked a few </b>
+<b> None of these codes are mine, but are modified versions are the original versions of code borrowed from other repositories </b>
 <b> The repository "combined" consists of 3 python script </b> 
 <ul>
 <li> camera.py </li>
@@ -8,8 +8,8 @@
  <li>video_main.py</li>
 </ul>
  <h4>camera.py</h4>
-  <div>-->Starts the camera through cv2 VideoCapture and also consists of defination  _del_ that stops the camera and the                    get_frame function reads the frames from the camera that has been previously started.</div>
- <h4>detect.py</h4>-->Returns the rectangle coordinates along with the classname.Uses MobileNetSSDv2 for object detection
+  <div>-->Starts the camera through cv2 VideoCapture. It also consists of defination<i>  _del_ </i>that stops the camera and the  <i>get_frame()</i> function reads the frames from the camera that has been previously started.</div>
+ <h4>detect.py</h4>-->Returns the rectangle coordinates along with the classname. Uses MobileNetSSDv2 for object detection.
  <h4>video_main.py</h4>-->takes the input from camera.py(the frames) and rectangle coordinates(for detect.py) and pushes the image onto a local host.
  
  <h1>How to run</h1>
@@ -18,7 +18,7 @@
  <li>Download the zip or clone the repository</li>
  <li>Make sure u have downloaded the model "frozen_inference_graph.pb" and "frozen_inference_graph.pb" from the link given below</li>
  <li>Copy the .pb and .pbtxt on the same location where the scripts are present</li>
- <li>Before running the scripts make sure u change ur public ip in host(video_main.py)"use the command ifconfig for windows" or "use the command ip addr show"</li>
+ <li>Before running the scripts make sure u change ur public ip in host(video_main.py) <b>use the command <i>ifconfig</i> for windows</b> or <b>use the command <i>ip addr show</i> on linux </b></li>
  <li>Run the command(make sure the terminal is open in the location your scripts are present)</li>
  
 <h2> python video_main.py </h2>
