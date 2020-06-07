@@ -1,6 +1,7 @@
 # FlyXtreme
 
-<b> None of these codes are mine, but are modified versions or the original versions of code borrowed from other repositories </b>
+<b> None of these codes are mine, but are modified versions or the original versions of code borrowed from other repositories
+</b>
 <b> The repository "combined" consists of 3 python script </b> 
 <ul>
 <li> camera.py </li>
@@ -20,8 +21,12 @@
  <li>Copy the .pb and .pbtxt on the same location where the scripts are present</li>
  <li>Before running the scripts make sure u change ur public ip in host(video_main.py) <b>use the command <i>ifconfig</i> for windows</b> or <b>use the command <i>ip addr show</i> on linux </b></li>
  <li>Run the command(make sure the terminal is open in the location your scripts are present)</li>
- 
+ </ul>
 <h2> python video_main.py </h2>
  <b> the website-insteraction is about the part that involves updating the site with video and also for the part where the python script has to pass data onto the website(which will be mainly helpful while using google maps api).This folder is ongoing .</b>
  
-<b> Reference:</b><link>https://jeanvitor.com/tensorflow-object-detecion-opencv/</link>
+<b> Reference: </b>
+<ul>
+ <li><link>https://jeanvitor.com/tensorflow-object-detecion-opencv/</link></li>
+ <li><link>https://www.w3schools.com/bootstrap/bootstrap_theme_company.asp</link></li>
+ </ul>
