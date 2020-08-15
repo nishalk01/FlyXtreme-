@@ -11,7 +11,7 @@ while True:
   contour_sizes = [(cv2.contourArea(contour), contour) for contour in contours]
   biggest_contour = max(contour_sizes, key=lambda x: x[0])[1]
   x,y,w,h = cv2.boundingRect(biggest_contour)
-  centerCoord = (int(x+w/2), int(y+(w/2)))
+  centerCoord = (int(x+w/2), int(y+w/2))
   print(centerCoord)
   cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
   img = cv2.circle(img, centerCoord, 10,(0,255,0),2)
