@@ -7,6 +7,17 @@ crit_throttle = 1000
 centx, centy = 0, 0
 f = open("val.txt", "w")
 
+#def make_720p():
+    #vc.set(3, 1280)
+    #vc.set(4, 720)
+
+def change_res(width, height):
+    vc.set(3, width)
+    vc.set(4, height)
+
+#make_720p()
+change_res(1280, 720)
+
 if vc.isOpened(): # try to get the first frame
     rval, frame = vc.read()
 else:
@@ -18,13 +29,13 @@ while rval:
     #print(type(frame))
     ih, iw, ic = frame.shape
     f.write(str(frame.shape))
-    
+    print(str(frame.shape))  
 
     
     cv2.circle(frame,(centx, centy), 1, (0,0,255), -1)
     centx = centx + 10
     centy = centy + 10
-    if(centy == ih ) :
+    if(centy == iw ) :
         break
     print ( centx,centy)
     mid = (0.5*iw,0.5*ih)
@@ -44,18 +55,39 @@ while rval:
     if ( int(centx) == 0 | int(centx) > int(iw) ) :
         yval = "N"
         yaw = 0
-    elif (centx <= int(0.5*ih)) :
+    elif (centx <= int(0.5*iw)) :
         yval = "R"
         yaw = (centx)*crit_throttle
     else :
         yval = "L"
-        yaw = (ih - centx)*crit_throttle
+        yaw = (iw - centx)*crit_throttle
+
+    if ( int(centy) == 0 | int(centy) > int(ih) ) :
+        pval = "N"
+        pitch = 0
+    elif (centy <= int(0.5*ih)) :
+        pval = "U"
+        pitch = (centy)*crit_throttle
+    else :
+        pval = "D"
+        pitch = (ih - centy)*crit_throttle
 
     print ( yval,yaw)
     #f.write("x: \t y: \t yval: \t yaw: \t")
-    writeval = ("x:",centx,"y:",centy,"yval:",yval,"yaw:",yaw)
-    f.write(str(writeval))
     f.write("\n")
+    f.write(str(centy))
+    f.write("\t")
+    f.write(str(ih))
+    f.write("\n")
+    f.write(str(pval))
+    f.write("\n")
+    f.write(str(pitch))
+    f.write("\n")
+
+    #writeval = ("x:",centx,"y:",centy,"yval:",yval,"yaw:",yaw, "pitch: ", pitch, "pval :", pval)
+    #f.write(str(writeval))
+    f.write("\n")
+    
     
 f.close()    
 vc.release()
