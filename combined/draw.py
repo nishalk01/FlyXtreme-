@@ -4,8 +4,8 @@ cv2.namedWindow("preview")
 vc = cv2.VideoCapture(0)
 
 crit_throttle = 1000
-centx, centy = 0, 0
-f = open("val.txt", "w")
+#centx, centy = 0, 0       //test case value init
+#f = open("val.txt", "w")
 
 #def make_720p():
     #vc.set(3, 1280)
@@ -28,24 +28,23 @@ while rval:
     rval, frame = vc.read()
     #print(type(frame))
     ih, iw, ic = frame.shape
-    f.write(str(frame.shape))
-    print(str(frame.shape))  
+    #f.write(str(frame.shape))
+    #print(str(frame.shape))  
 
-    
+    #pass values of centroid into (centx, centy)
     cv2.circle(frame,(centx, centy), 1, (0,0,255), -1)
-    centx = centx + 10
-    centy = centy + 10
-    if(centy == iw ) :
-        break
-    print ( centx,centy)
+    #centx = centx + 10      //test value
+    #centy = centy + 10     //test value
+    #if(centy == iw ) :
+        #break
+    #print ( centx,centy)
     mid = (0.5*iw,0.5*ih)
-    f.write(str(mid))
+    #f.write(str(mid))
 
 
     key = cv2.waitKey(20)
     if key == 27: # exit on ESC
-
-        break
+         break
     else:
         linev = cv2.line(img=frame, pt1=(int(0.5*iw), 0), pt2=(int(0.5*iw), ih), color=(255, 0, 0), thickness=1, lineType=8, shift=0)
         #linev2 = cv2.line(img=frame, pt1=(int(0.65*iw), 0), pt2=(int(0.65*iw), ih), color=(0, 255, 0), thickness=1, lineType=8, shift=0)
@@ -72,23 +71,24 @@ while rval:
         pval = "D"
         pitch = (ih - centy)*crit_throttle
 
-    print ( yval,yaw)
+    print ( yval,yaw, pval, pitch)
+    #SEND YVAL,YAW,PVAL,PITCH TO ARDUINO OR WHATEVER USED 
     #f.write("x: \t y: \t yval: \t yaw: \t")
-    f.write("\n")
-    f.write(str(centy))
-    f.write("\t")
-    f.write(str(ih))
-    f.write("\n")
-    f.write(str(pval))
-    f.write("\n")
-    f.write(str(pitch))
-    f.write("\n")
+    #f.write("\n")
+    #f.write(str(centy))
+    #f.write("\t")
+    #f.write(str(ih))
+    #f.write("\n")
+    #f.write(str(pval))
+    #f.write("\n")
+    #f.write(str(pitch))
+    #f.write("\n")
 
     #writeval = ("x:",centx,"y:",centy,"yval:",yval,"yaw:",yaw, "pitch: ", pitch, "pval :", pval)
     #f.write(str(writeval))
-    f.write("\n")
+    #f.write("\n")
     
     
-f.close()    
+#f.close()    
 vc.release()
 cv2.destroyWindow("preview")
